@@ -11,7 +11,15 @@ name = io.read()
 
 print("Hello " .. name)
 
-io.write("How old are you " .. name .. "? ")
-age = tonumber(io.read())
+local age
+while true do
+    io.write("How old are you " .. name .. "? ")
+    age = tonumber(io.read())
+    if age then
+        break
+    else
+        print("Please enter a valid number for your age.")
+    end
+end
 
 print("Niceeeeee so that means you will be " .. tostring(age + 1) .. " next year?")
